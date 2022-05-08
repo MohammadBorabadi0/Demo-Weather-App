@@ -33,11 +33,11 @@ const WeatherForm = ({
           placeholder="Enter City Name"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-          className="flex-1 focus:outline-none font-semibold text-sm sm:text-base lg:text-lg rounded-sm px-1 lg:px-4 py-1.5"
+          className="flex-1 focus:outline-none font-semibold text-sm sm:text-base rounded-sm px-1 lg:px-4 py-1.5"
         />
         <button
           type="submit"
-          className="bg-blue-200 text-sm sm:text-base lg:text-lg font-semibold rounded-sm px-1 lg:px-4 py-1.5 ml-1"
+          className="bg-blue-200 text-sm sm:text-base font-semibold rounded-sm px-1 lg:px-4 py-1.5 ml-1"
         >
           Search
         </button>

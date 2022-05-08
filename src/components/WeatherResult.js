@@ -50,26 +50,18 @@ const WeatherResult = () => {
           </div>
         </div>
         <div className="bg-slate-700 text-white flex flex-col items-center justify-center h-64 rounded-md gap-8">
-          <h4 className="font-semibold">Wind Status</h4>
+          <h4 className="font-semibold">Visibility</h4>
           <p className="text-5xl font-semibold">
-            {Math.floor(weather["data"].wind["speed"])}
-            <span className="text-xl">mph</span>
+            {Number(weather["data"].visibility / 1000).toFixed(1)}
+            <span className="text-xl">Km</span>
           </p>
-          <div className="flex justify-center items-center text-white">
-            <MdNavigation size="20px" />
-            <span className="text-sm">N</span>
-          </div>
         </div>
         <div className="bg-slate-700 text-white flex flex-col items-center justify-center h-64 rounded-md gap-8">
-          <h4 className="font-semibold">Wind Status</h4>
+          <h4 className="font-semibold">Air Pressure</h4>
           <p className="text-5xl font-semibold">
-            {Math.floor(weather["data"].wind["speed"])}
-            <span className="text-xl">mph</span>
+            {Number(weather["data"].main["pressure"] / 5280).toFixed(1)}
+            <span className="text-xl">miles</span>
           </p>
-          <div className="flex justify-center items-center text-white">
-            <MdNavigation size="20px" />
-            <span className="text-sm">N</span>
-          </div>
         </div>
       </div>
     </>

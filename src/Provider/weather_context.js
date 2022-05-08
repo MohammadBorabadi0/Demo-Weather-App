@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { FETCH_DATA, WEATHER_ERROR, WEATHER_LOADING } from "../actions";
+import { CLEAR, FETCH_DATA, WEATHER_ERROR, WEATHER_LOADING } from "../actions";
 
 const initialState = {
   weatherData: [],
@@ -33,6 +33,9 @@ const reducer = (state, action) => {
         errorMsg: action.payload,
         weatherData: [],
       };
+    }
+    case CLEAR: {
+      return { ...state, weatherData: [], errorMsg: null };
     }
     default: {
       return state;

@@ -3,7 +3,7 @@ import axios from "axios";
 import WeatherForm from "./WeatherForm";
 
 // Actions
-import { WEATHER_ERROR, WEATHER_LOADING } from "../actions";
+import { CLEAR, WEATHER_ERROR, WEATHER_LOADING } from "../actions";
 
 // Context
 import { useWeather } from "../Provider/weather_context";
@@ -12,8 +12,7 @@ import { useWeather } from "../Provider/weather_context";
 import { GoLocation } from "react-icons/go";
 
 const Weather = () => {
-  const { dispatch, weather_error, weather_loading, errorMsg, weatherData } =
-    useWeather();
+  const { dispatch, weather_error, errorMsg, weatherData } = useWeather();
   const [city, setCity] = useState("");
   const [showResult, setShowResult] = useState(false);
   const inputRef = useRef();
@@ -88,7 +87,10 @@ const Weather = () => {
         <div className="text-white w-full">
           <button
             className="bg-gray-500 ml-8 px-2 py-1 rounded-sm font-semibold"
-            onClick={() => setShowResult(false)}
+            onClick={() => {
+              setShowResult(false);
+              dispatch({ type: CLEAR });
+            }}
           >
             Search For Places
           </button>
